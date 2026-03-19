@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _10._03._2026_slepa_mapa
+﻿namespace _10._03._2026_slepa_mapa
 {
     public class MapPoint
     {
