@@ -4,21 +4,25 @@
         Title="Slepá mapa" Height="500" Width="900">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <!-- mapa -->
-        <Image Name="MapImage"
-               Source="img/czechia.png"
-               Stretch="Uniform"
-               SizeChanged="MapImage_SizeChanged"/>
-
-        <!-- body -->
-        <Canvas Name="OverlayCanvas"/>
-
-        <!-- horní panel -->
-        <StackPanel VerticalAlignment="Top" Background="#AAFFFFFF">
-            <TextBlock Name="TxtTarget" FontSize="20" Margin="10"/>
-            <TextBlock Name="TxtScore" FontSize="16" Margin="10"/>
+        <StackPanel Grid.Row="0" Background="#F0F0F0" Orientation="Horizontal">
+            <TextBlock Name="TxtTarget" FontSize="20" Margin="10" FontWeight="Bold"/>
+            <TextBlock Name="TxtScore" FontSize="16" Margin="10" VerticalAlignment="Center"/>
         </StackPanel>
 
+        <Viewbox Grid.Row="1">
+            <Grid>
+                <Image Name="MapImage"
+                   Source="img/czechia.png"
+                   Stretch="Uniform"
+                   SizeChanged="MapImage_SizeChanged"
+                   MouseLeftButtonDown="MapImage_MouseLeftButtonDown"/>  
+                <Canvas Name="OverlayCanvas" IsHitTestVisible="True"/>
+            </Grid>
+        </Viewbox>
     </Grid>
 </Window>
